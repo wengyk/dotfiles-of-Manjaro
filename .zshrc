@@ -98,6 +98,7 @@ export HISTFILESIZE=100000000
 # -----------------------------------------------------------------
 alias vi='vim'
 alias k='k -h'
+alias bd=". bd -si"
 alias ln='ln -s'
 alias llt='ls -alht'
 alias lla='ls -alh'
