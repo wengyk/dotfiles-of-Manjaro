@@ -1,0 +1,8 @@
+[user]
+	name = Weng Yongkun
+	email = wengyongkun@gmail.com
+[core]
+	editor = emacsclient -t
+	quotepath = false
+[color]
+	ui = true

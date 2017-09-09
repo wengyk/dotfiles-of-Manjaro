@@ -1,0 +1,308 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = ","
+colorscheme molokai
+set gui=nonavigation,nobookmarks
+set history=10000
+set newtab=all
+set complete=slbh
+set hintchars=jksdflaghioweqrumncvx
+set maxitems=20
+set focuscontent
+set noscrollbars
+set editor=gvim\ -f
+set nextpattern='(下|后)一?(页|頁|篇|章|张)|次のページ|次へ','^\bnext\b','\bnext\b','\bsuivant\b','^(>|›)$','^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
+set previouspattern='(上|前)一?(页|頁|篇|章|张)|前のページ|前へ','^\bprev|previous\b','\bprev|previous\b','\bprécédent\b','^(<|‹)$','^(<<|«)$','^(<|«)','(<|«)$'
+set status=input,location,bookmark,history,position,tabcount
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Quickmarks
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+silent qmark a https://www.google.com/culturalinstitute/u/0/project/art-project
+silent qmark b https://wengyk.github.io/
+silent qmark e https://www.evernote.com/Login.action
+silent qmark f https://feedly.com/
+silent qmark g https://github.com/wengyk
+silent qmark i https://www.inoreader.com/
+silent qmark I https://www.instapaper.com/
+silent qmark k https://web.kamihq.com/web/viewer.html
+silent qmark m https://mail.google.com/mail/u/0/
+silent qmark o resource://extension-at-one-tab-dot-com/data/onetab.html
+silent qmark p https://getpocket.com/a/queue/
+silent qmark s chrome://scrapbook/content/manage.xul
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Customize shortcut key
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" basic key mapping
+nnoremap j 7j
+nnoremap k 7k
+nnoremap < h
+nnoremap > l
+nnoremap l <C-n>
+nnoremap h <C-p>
+nnoremap x <C-^>
+nnoremap p P
+nnoremap P p
+nnoremap y Y
+nnoremap Y y
+nnoremap <C-[> [[
+nnoremap <C-]> ]]
+nmap s :stop<Return>
+nmap U :undo<Space>
+nmap <C-A-l> :tabmove<Space>+1<Return>
+nmap <C-A-h> :tabmove<Space>-1<Return>
+nmap gd :tabonly<Return>
+nmap <leader>qa :qall<Return>
+nmap <leader>hi :history<Return>
+nmap <leader>xa :xall<Return>
+nmap <leader>so :source ~/.vimperatorrc<Return>
+
+" gui setting shortcut key
+nmap <A-0> :set<Space>gui=invmenu<Return>
+" nmap <A-1> :set<Space>gui=invtabs<Return>
+nmap <A-2> :set<Space>gui=invnavigation<Return>
+nmap <A-3> :set<Space>gui=invbookmarks<Return>
+nmap <A-4> <F4>
+
+" C-num switch to certain tab
+nnoremap <C-1> 1gt
+nnoremap <C-2> 2gt
+nnoremap <C-3> 3gt
+nnoremap <C-4> 4gt
+nnoremap <C-5> 5gt
+nnoremap <C-6> 6gt
+nnoremap <C-7> 7gt
+nnoremap <C-8> 8gt
+nnoremap <C-9> 9gt
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => firefox setting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" firefox default shortcurt key
+noremap <C-c>b i<C-b>
+
+" firefox dialog
+nmap <leader>ab :dialog<Space>addbookmark<Return>
+nmap <leader>cc :dialog<Space>cleardata<Return>
+nmap <leader>pr :pref<Return>
+nmap <leader>ac :tabopen about:config<Return>
+nmap <leader>se :dialog searchengines<Return>
+
+"set page ecoding
+nmap <leader>eu :set encoding=UTF-8<Return>
+nmap <leader>eg :set encoding=GB2312<Return>
+
+"open reader mode
+nmap <leader>rm :js document.getElementById('reader-mode-button').click();<Return>
+
+"ydcv
+nnoremap W :!ydcv
+nnoremap w :exe ":!ydcv " + content.getSelection()<Return>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => firefox addons
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" stylish
+:js << EOF
+function kun_custom_style() {
+    var id = [542];
+    var service = Components.classes["@userstyles.org/style;1"].getService(Components.interfaces.stylishStyle)
+    for (var i=0; i < id.length; i++){
+        var style = service.find(id[i], service.REGISTER_STYLE_ON_CHANGE);
+        style.enabled = !style.enabled;
+        style.save();
+    }
+}
+function solarized_dark() {
+    var id = [512];
+    var service = Components.classes["@userstyles.org/style;1"].getService(Components.interfaces.stylishStyle)
+    for (var i=0; i < id.length; i++){
+        var style = service.find(id[i], service.REGISTER_STYLE_ON_CHANGE);
+        style.enabled = !style.enabled;
+        style.save();
+    }
+}
+EOF
+nmap <silent> e :js<Space>kun_custom_style()<Return>
+nmap <silent> E :js<Space>solarized_dark()<Return>
+
+" foxyproxy
+nmap <leader>pa :js foxyproxy.fp.setMode(foxyproxy.fp.mode == "patterns" ? "patterns": "patterns", true);<Return>
+nmap <leader>ps :js foxyproxy.fp.setMode(foxyproxy.fp.mode == "3038930172" ? "patterns": "3038930172", true);<Return>
+nmap <leader>pg :js foxyproxy.fp.setMode(foxyproxy.fp.mode == "1239228620" ? "patterns": "1239228620", true);<Return>
+nmap <leader>pl :js foxyproxy.fp.setMode(foxyproxy.fp.mode == "3715545197" ? "patterns": "3715545197", true);<Return>
+nmap <leader>po :js foxyproxy.fp.setMode(foxyproxy.fp.mode == "1292585756" ? "patterns": "1292585756", true);<Return>
+nmap <leader>px :js foxyproxy.fp.setMode(foxyproxy.fp.mode == "2733740856" ? "patterns": "2733740856", true);<Return>
+nmap <leader>pd :js foxyproxy.fp.setMode(foxyproxy.fp.mode == "disabled" ? "patterns": "disabled", true);<Return>
+
+" Gmail notifier
+nmap <leader>gn :js document.getElementById("action-button--jid1-sqmeawsoa3fzpcjetpack-fngmail").click();<Return>
+
+" Pocket
+nmap <leader>ap :js document.getElementById("pocket-button").click();<Return>
+
+" Distill web monitor
+nmap <leader>di :js AlertBox_O_O.showPopup();<Return>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => customize commands
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" search in current site
+nmap <leader>sc :exe ":tabopen " + content.getSelection() + " site:" + content.document.domain<Return>
+
+" search in specified site
+command! searchgoogle -nargs=* tabopen https://www.google.com/search?hl=en&newwindow=1&tbo=d&output=search&sclient=psy-ab&q=<args>&btnG=&oq=&gs_l=
+nmap <leader>sg :exe ":searchgoogle "+content.getSelection()<Return>
+command! searchbaidu -nargs=* tabopen https://www.baidu.com/s?wd=<args>&rsv_bp=0&rsv_spt=3
+nmap <leader>sb :exe ":searchbaidu "+content.getSelection()<Return>
+
+" open page in chromium
+nmap <leader>ch :js io.run("/usr/bin/chromium", [buffer.URL])<Return>
+
+" open page in opera
+nmap <leader>cq :js io.run("/usr/bin/qupzilla", [buffer.URL])<Return>
+
+" A-5 to hide statusline
+:js << EOF
+function toggle_bottombar() {
+    var bb = document.getElementById('liberator-bottombar');
+    if (!bb)
+        return;
+    bb.style.height = (bb.style.height == '') ? '0px' : '';
+    bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+    }
+EOF
+nmap <silent> <A-5> :js<Space>toggle_bottombar()<Return>
+"autocmd VimperatorEnter .* js toggle_bottombar()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vimp plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" bookmarktoolbar-hint
+nmap <leader>Th Bookmarks Toolbar-HINTS (new-tab)
+nmap <leader>th <A-3><leader>F
+
+" Feedsomekey
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='https?://www\.rememberthemilk\.com/home/' j k m i c t ? d F,f G,g S,s L,l Y,y H,h M,m &lt;Del> &lt;C-S-Left> &lt;C-S-Right>
+lazy fmaps -u='groups\.google\.com/forum' n p
+lazy fmaps -u='chrome://brief/content/brief\.xul' <Space> j <S-Space> k u i <Enter> h m <A-n> a s d
+
+" multi_requester
+javascript <<EOF
+liberator.globalVariables.multi_requester_siteinfo = [
+    {
+        name:           'youdao',
+        description:    '有道词典',
+        url:            'http://dict.youdao.com/search?q=%s&keyfrom=dict.index#q%3D%s%26keyfrom%3Ddict.index',
+        xpath:          'id("phrsListTab")',
+    },
+    {
+        name:           'powerword',
+        description:    '金山词霸',
+        url:            'http://www.iciba.com/search?s=%s',
+        xpath:          'id("dict_main")',
+    },
+    {
+        name:           'googletranslate',
+        description:    'Google Translate',
+        url:            'http://translate.google.cn/?source=osdd#auto/zh-CN/%s',
+        xpath:          'id("result_box")',
+    }
+
+];
+EOF
+"
+style -name youdao chrome://liberator/content/buffer.xhtml <<EOM
+div.trans-container > ul > li { font-size: 16px !important; color: #FF9900 !important; background-color: #121112 !important;}
+h2.wordbook-js { font-size: 18px !important; }
+EOM
+
+" caret-hint
+let g:caret_hint_key = 'm'
+let g:caret_hint_tail_key = 'M'
+
+" hints-yank-paste
+let g:hints_copy_maps = "e E p P"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => emacs key mapping
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" M-x enters command mode
+noremap <A-x> :
+inoremap <A-x> <Esc>:
+cmap <A-x> <Esc>:
+
+" Emacs navigation in command line and insert mode
+cmap <C-n> <Tab>
+cmap <C-p> <S-Tab>
+cmap <C-f> <Right>
+cmap <C-k> <S-End><Del>
+cmap <C-b> <Left>
+cmap <C-d> <Del>
+cmap <C-j> <Return>
+noremap <C-j> b
+inoremap <C-j> <Return>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-k> <S-End><Del>
+inoremap <A-e> <End>
+inoremap <C-a> <Home>
+inoremap <C-d> <Del>
+inoremap <A-h> <S-Esc><C-a><S-Esc>
+
+" Emacs navigation in normal mode
+nnoremap <C-x>h i<C-a>
+
+" Use C-f and C-b for tab browsing
+" nnoremap <C-f> <C-n>
+" nnoremap <C-b> <C-p>
+
+" Use C-v and M-v for jump scrolling
+nnoremap <C-v> <C-f>
+nnoremap <A-v> <C-b>
+
+" Goto the top/bottom of the document with M-<
+nnoremap <A-<> gg
+nnoremap <A->> G
+
+" Map C-x C-s to save
+nnoremap <C-x><C-s> <C-s>
+
+" Copy the current URL to the clipboard with M-w
+nnoremap <A-w> Y
+
+" Copy selected text to the clipboard with C-w
+nnoremap <C-w> y
+
+" C-g as cancel (C-q is stop)
+cmap <C-g> <Esc>
+imap <C-g> <Esc>
+nnoremap <C-g> <Esc>
+
+" Exit and save the session with C-x C-c
+noremap <C-x><C-c> :quitall<Return>
+
+" Buffer lists with C-x b and C-x C-b
+nnoremap <C-x>b b
+
+" C-x C-f starts the "Open File" dialog (C-x C-s is Save)
+nmap <C-x><C-f> i<C-o>
+
+" dowload
+nmap <C-c>d :tabopen about:downloads<Return>
+
+" Add a bookmark with C-c C-d (dialog)
+nmap <C-c><C-d> i<C-d>
+
+" Restart with C-c C-r
+" nmap <C-c><C-r> :restart<Return>
+nmap <C-c><C-r> :js classicthemerestorerjs.ctr.restartBrowser();<Return>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

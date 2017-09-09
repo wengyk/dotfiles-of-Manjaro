@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=/opt/xx-net/start
+GenericName[en_US]=xx-net
+GenericName=xx-net
+Icon=
+MimeType=
+Name[en_US]=XX-Net
+Name=XX-Net
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

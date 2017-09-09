@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[en_US]=Redshfit
+Comment=Redshfit
+Exec=/usr/bin/redshift -l 24.48:118.1 -t 6500:5500 -g 0.8 -m randr
+GenericName[en_US]=
+GenericName=
+Icon=system-run
+MimeType=
+Name[en_US]=Redshfit
+Name=Redshfit
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[en_US]=Unclutter
+Comment=Unclutter
+Exec=/usr/bin/unclutter -idle 1 -root
+GenericName[en_US]=
+GenericName=
+Icon=system-run
+MimeType=
+Name[en_US]=Unclutter
+Name=Unclutter
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
