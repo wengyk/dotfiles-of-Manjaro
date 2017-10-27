@@ -17,10 +17,10 @@
 !.config/fontconfig/
 !.config/autostart/
 !.i3/
-!.newsbeuter/
-.newsbeuter/*
-!.newsbeuter/config
-!.newsbeuter/urls
+!.newsboat/
+.newsboat/*
+!.newsboat/config
+!.newsboat/urls
 !.spacemacs.d/
 .spacemacs.d/*
 !.spacemacs.d/init.el
