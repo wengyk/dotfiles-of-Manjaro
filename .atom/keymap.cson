@@ -36,6 +36,8 @@
    'ctrl-f': 'atomic-emacs:forward-char'
    'ctrl-k': 'atomic-emacs:kill-line'
    'ctrl-e': 'editor:move-to-end-of-line'
+   'ctrl-r': 'find-and-replace:show'
+   'ctrl-/': 'core:undo'
 
 '.platform-linux atom-workspace.atomic-emacs atom-text-editor':
    'ctrl-d': 'core:delete'
