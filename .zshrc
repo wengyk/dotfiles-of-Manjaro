@@ -52,7 +52,7 @@ ZSH_THEME="gentoo"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages colorize command-not-found fasd git github liquidprompt python tmux wd zsh-256color zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
+plugins=(colored-man-pages colorize command-not-found extract fasd git github liquidprompt python tmux wd zsh-256color zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
 # User configuration
 
