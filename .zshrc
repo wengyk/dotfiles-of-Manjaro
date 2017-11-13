@@ -52,7 +52,7 @@ ZSH_THEME="gentoo"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages colorize command-not-found fasd git github k liquidprompt python tmux wd zsh-256color zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
+plugins=(colored-man-pages colorize command-not-found fasd git github liquidprompt python tmux wd zsh-256color zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
 # User configuration
 
@@ -97,34 +97,27 @@ export HISTFILESIZE=100000000
 # alias
 # -----------------------------------------------------------------
 alias vi='vim'
-alias k='k -h'
 alias bd=". bd -si"
-alias ln='ln -s'
-alias llt='ls -alht'
-alias lla='ls -alh'
+alias le='exa -abghl --git --color=automatic'
+alias c='pygmentize -f console256 -g'
 alias emacs='LC_CTYPE="zh_CN.UTF-8" emacs'
 alias ec='emacsclient -t'
 alias sdcv='sdcv -u 朗道英汉字典5.0'
 alias gollum='gollum --adapter rugged'
 alias irssi_kun='irssi --connect=irc.freenode.net --nick=wengyk'
-# alias mpv='mpv --ao=alsa'
 # -----------------------------------------------------------------
 # zsh-autosuggestions plugin
-# -----------------------------------------------------------------
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 # -----------------------------------------------------------------
 # enable 256color in zsh
-# -----------------------------------------------------------------
 # [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
 # -----------------------------------------------------------------
 # fzf setting
-# -----------------------------------------------------------------
 source /home/weng/.fzf.zsh
 # -----------------------------------------------------------------
 # zsh-completions plugin
 autoload -U compinit && compinit
 # -----------------------------------------------------------------
 # hub setting
-# -----------------------------------------------------------------
 eval "$(hub alias -s)"
 # -----------------------------------------------------------------
