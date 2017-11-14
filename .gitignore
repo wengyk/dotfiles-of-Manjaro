@@ -16,6 +16,8 @@
 !.config/ranger/commands.py
 !.config/fontconfig/
 !.config/autostart/
+!.config/liquidpromptrc
+!.config/liquid.theme
 !.i3/
 !.newsboat/
 .newsboat/*
