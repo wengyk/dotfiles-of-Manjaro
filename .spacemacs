@@ -350,6 +350,10 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+
+  ;; Disable warnning about the location of your environment variable settings.
+  (setq exec-path-from-shell-check-startup-files nil)
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -358,6 +362,45 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  (defun copy-to-clipboard ()
+    "Copies selection to x-clipboard."
+    (interactive)
+    (if (display-graphic-p)
+        (progn
+          (message "Yanked region to x-clipboard!")
+          (call-interactively 'clipboard-kill-ring-save)
+          )
+      (if (region-active-p)
+          (progn
+            (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+            (message "Yanked region to clipboard!")
+            (deactivate-mark))
+        (message "No region active; can't yank to clipboard!"))))
+
+  (defun paste-from-clipboard ()
+    "Pastes from x-clipboard."
+    (interactive)
+    (if (display-graphic-p)
+        (progn
+          (clipboard-yank)
+          (message "graphics active"))
+      (insert (shell-command-to-string "xsel -o -b"))))
+
+  (evil-leader/set-key "oy" 'copy-to-clipboard)
+  (evil-leader/set-key "op" 'paste-from-clipboard)
+
+  ;; auto truncate line in org-mode
+  (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+
+  ;; set powerline separator
+  (setq powerline-default-separator 'nil)
+
+  ;; use zathura to display PDF
+  (setq org-ref-open-pdf-function
+        (lambda (fpath)
+          (start-process "zathura" "*helm-bibtex-zathura*" "/usr/bin/zathura" fpath)))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
