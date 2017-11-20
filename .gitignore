@@ -23,9 +23,7 @@
 .newsboat/*
 !.newsboat/config
 !.newsboat/urls
-!.spacemacs.d/
-.spacemacs.d/*
-!.spacemacs.d/init.el
+!.spacemacs
 !.vimperator/
 .vimperator/*
 !.vimperator/colors/
