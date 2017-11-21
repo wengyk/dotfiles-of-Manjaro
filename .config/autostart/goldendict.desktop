@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=GoldenDict
+GenericName=Multiformat Dictionary
+Comment=Feature-rich dictionary lookup program
+Exec=goldendict
+Icon=goldendict
+Terminal=false
+Type=Application
+Categories=Office;
+StartupNotify=false
