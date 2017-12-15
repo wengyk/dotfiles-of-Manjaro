@@ -451,3 +451,6 @@ inoremap <C-K> <Esc>lDa
 inoremap <C-Y> <Esc>Pa
 inoremap <C-L> <Esc>zza
 nnoremap <C-L> zz
+nnoremap j gj
+nnoremap k gk
+
