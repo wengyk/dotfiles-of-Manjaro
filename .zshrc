@@ -121,3 +121,6 @@ autoload -U compinit && compinit
 # hub setting
 eval "$(hub alias -s)"
 # -----------------------------------------------------------------
+# cheat setting
+export CHEATCOLORS=true
+# -----------------------------------------------------------------
