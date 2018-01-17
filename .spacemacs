@@ -397,6 +397,9 @@ before packages are loaded."
   ;; set powerline separator
   (setq powerline-default-separator 'nil)
 
+  ;; display minor mode with ASCII characters
+  (setq dotspacemacs-mode-line-unicode-symbols 'nil)
+
   ;; use zathura to display PDF
   (setq org-ref-open-pdf-function
         (lambda (fpath)
