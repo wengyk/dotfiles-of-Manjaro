@@ -449,6 +449,7 @@ inoremap <C-D> <Delete>
 inoremap <C-K> <Esc>lDa
 inoremap <C-Y> <Esc>Pa
 inoremap <C-L> <Esc>zza
+inoremap <C-G> <Esc>
 nnoremap <C-L> zz
 nnoremap j gj
 nnoremap k gk
