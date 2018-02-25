@@ -47,3 +47,6 @@
    'ctrl-l': 'atomic-emacs:recenter-top-bottom'
    'ctrl-n': 'atomic-emacs:next-line'
    'ctrl-p': 'atomic-emacs:previous-line'
+
+'.platform-win32 atom-workspace, .platform-linux atom-workspace':
+  'ctrl-x ctrl-f': 'advanced-open-file:toggle'
