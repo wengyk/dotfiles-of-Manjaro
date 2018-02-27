@@ -96,13 +96,11 @@ export HISTFILESIZE=100000000
 # -----------------------------------------------------------------
 # alias
 # -----------------------------------------------------------------
-alias vi='vim'
 alias bd=". bd -si"
 alias le='exa -abghl --git --color=automatic'
 alias c='pygmentize -f console256 -g'
 alias emacs='LC_CTYPE="zh_CN.UTF-8" emacs'
 alias ec='emacsclient -t'
-alias sdcv='sdcv -u 朗道英汉字典5.0'
 alias gollum='gollum --adapter rugged'
 alias irssi_kun='irssi --connect=irc.freenode.net --nick=wengyk'
 # -----------------------------------------------------------------
