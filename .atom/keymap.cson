@@ -31,13 +31,14 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 'atom-workspace atom-text-editor':
-   'ctrl-a': 'editor:move-to-beginning-of-line'
+   'ctrl-a': 'editor:move-to-beginning-of-screen-line'
    'ctrl-b': 'atomic-emacs:backward-char'
    'ctrl-f': 'atomic-emacs:forward-char'
    'ctrl-k': 'atomic-emacs:kill-line'
    'ctrl-e': 'editor:move-to-end-of-line'
    'ctrl-r': 'find-and-replace:show'
    'ctrl-/': 'core:undo'
+   'ctrl-x ctrl-s': 'core:save'
 
 '.platform-linux atom-workspace.atomic-emacs atom-text-editor':
    'ctrl-d': 'core:delete'
