@@ -24,6 +24,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'yegappan/mru'
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
+Plugin 'iamcco/markdown-preview.vim'
+let g:mkdp_path_to_chrome = "qutebrowser"
 Plugin 'airblade/vim-gitgutter'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
