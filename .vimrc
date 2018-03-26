@@ -22,6 +22,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'yegappan/mru'
+let MRU_Max_Entries = 100
+map <F4> :MRU<cr>
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 Plugin 'iamcco/markdown-preview.vim'
